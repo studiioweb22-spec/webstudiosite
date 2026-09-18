@@ -71,12 +71,15 @@
             max-height: 400px;
         }
         /* Services carousel */
-        .services-track {
-            scrollbar-width: none;
-            -ms-overflow-style: none;
+        .service-card {
+            transition: transform .5s cubic-bezier(.22,.61,.36,1), opacity .5s ease;
         }
-        .services-track::-webkit-scrollbar {
-            display: none;
+        #servicesDots button {
+            width: 7px; height: 7px; border-radius: 999px; padding: 0; border: none;
+            background: #D1B89A; cursor: pointer;
+        }
+        #servicesDots button.active-dot {
+            background: #3B2A20;
         }
         /* Scroll progress bar */
         #scrollProgress {
@@ -138,22 +141,25 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="top" data-aos="fade-up" class="relative px-4 sm:px-8 pt-16 sm:pt-24 pb-14 sm:pb-20 text-center max-w-5xl mx-auto border-b border-[#D1B89A] overflow-hidden">
-        <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_rgba(59,42,32,0.06),_transparent_60%)]"></div>
-        <p class="text-xs uppercase tracking-widest text-[#7B5E4A] mb-6">Est. 2024 — Based in California, working worldwide</p>
-        <h1 class="font-serif text-3xl sm:text-4xl md:text-7xl font-normal leading-tight tracking-tight mb-6 sm:mb-8">
-            Digital craft for brands <br class="hidden sm:block"><em class="italic">that speak softly.</em>
-        </h1>
-        <p class="text-[#7B5E4A] max-w-xl mx-auto text-base md:text-lg mb-10 sm:mb-12 font-light leading-relaxed">
-            We design and build considered websites for restaurants, studios, ateliers and independent houses — where typography is deliberate, motion is quiet, and nothing is decorative by accident.
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+    <section id="top" data-aos="fade-up" class="relative px-4 sm:px-8 py-24 sm:py-0 min-h-[88vh] flex items-center justify-center border-b border-[#D1B89A] overflow-hidden">
+        <img src="hero-texture.png" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover -z-20">
+        <div class="pointer-events-none absolute inset-0 -z-10 bg-[#F2E7D5]/80"></div>
+        <div class="text-center max-w-5xl mx-auto">
+            <p class="text-xs uppercase tracking-widest text-[#7B5E4A] mb-6">Est. 2024 — Based in California, working worldwide</p>
+            <h1 class="font-serif text-3xl sm:text-4xl md:text-7xl font-normal leading-tight tracking-tight mb-6 sm:mb-8">
+                Digital craft for brands <br class="hidden sm:block"><em class="italic">that speak softly.</em>
+            </h1>
+            <p class="text-[#7B5E4A] max-w-xl mx-auto text-base md:text-lg mb-10 sm:mb-12 font-light leading-relaxed">
+                We design and build considered websites for restaurants, studios, ateliers and independent houses — where typography is deliberate, motion is quiet, and nothing is decorative by accident.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
 <a href="#contact" class="inline-flex w-fit bg-[#A67C52] text-[#F2E7D5] px-6 sm:px-8 py-3.5 rounded-full text-xs uppercase tracking-widest hover:bg-opacity-90 transition">
     Begin a Project
 </a>
 <a href="#work" class="inline-flex w-fit border border-[#D1B89A] px-6 sm:px-8 py-3.5 rounded-full text-xs uppercase tracking-widest hover:border-[#3B2A20] transition">
     See Our Work
 </a>
+            </div>
         </div>
     </section>
 
@@ -225,59 +231,61 @@
 
     <!-- Services Section -->
     <section id="services" data-aos="fade-up" class="py-16 sm:py-20 max-w-7xl mx-auto border-b border-[#D1B89A]">
-        <div class="px-4 sm:px-8 flex justify-between items-end mb-10 sm:mb-12 gap-4">
-            <div>
-                <h3 class="text-xs uppercase tracking-widest text-[#7B5E4A] mb-3">Services</h3>
-                <h2 class="font-serif text-2xl sm:text-3xl md:text-5xl font-light">What we do, and how <em class="italic">we do it.</em></h2>
-            </div>
-            <div class="hidden sm:flex gap-3 shrink-0">
-                <button type="button" id="servicesPrev" aria-label="Previous service" class="w-11 h-11 rounded-full bg-[#3B2A20] text-[#F2E7D5] flex items-center justify-center hover:bg-[#A67C52] transition">←</button>
-                <button type="button" id="servicesNext" aria-label="Next service" class="w-11 h-11 rounded-full bg-[#3B2A20] text-[#F2E7D5] flex items-center justify-center hover:bg-[#A67C52] transition">→</button>
-            </div>
+        <div class="px-4 sm:px-8 mb-10 sm:mb-14">
+            <h3 class="text-xs uppercase tracking-widest text-[#7B5E4A] mb-3">Services</h3>
+            <h2 class="font-serif text-2xl sm:text-3xl md:text-5xl font-light">What we do, and how <em class="italic">we do it.</em></h2>
         </div>
 
-        <div id="servicesTrack" class="services-track flex gap-5 overflow-x-auto snap-x snap-mandatory px-4 sm:px-8 pb-4">
-            <div class="snap-start shrink-0 w-[80%] sm:w-[320px] rounded-2xl border border-[#D1B89A] bg-[#FAF7F0] p-8 flex flex-col">
-                <span class="font-serif text-lg text-[#A67C52] mb-6">01</span>
-                <h4 class="font-serif text-xl sm:text-2xl mb-3">Brand Identity</h4>
-                <p class="text-sm text-[#7B5E4A] font-light leading-relaxed">Marks, systems and typography built to endure — considered from the first sketch to the final specimen.</p>
+        <div class="px-4 sm:px-8 flex items-center justify-center gap-4 sm:gap-10">
+            <button type="button" id="servicesPrev" aria-label="Previous service" class="shrink-0 w-11 h-11 rounded-full bg-[#3B2A20] text-[#F2E7D5] flex items-center justify-center hover:bg-[#A67C52] transition">←</button>
+
+            <div id="servicesStage" class="relative w-full max-w-[280px] sm:max-w-[340px] h-[300px] sm:h-[360px]">
+                <div class="service-card absolute inset-0 rounded-2xl border border-[#D1B89A] bg-[#FAF7F0] p-8 flex flex-col justify-center">
+                    <span class="font-serif text-lg text-[#A67C52] mb-6">01</span>
+                    <h4 class="font-serif text-xl sm:text-2xl mb-3">Brand Identity</h4>
+                    <p class="text-sm text-[#7B5E4A] font-light leading-relaxed">Marks, systems and typography built to endure — considered from the first sketch to the final specimen.</p>
+                </div>
+                <div class="service-card absolute inset-0 rounded-2xl border border-[#D1B89A] bg-[#FAF7F0] p-8 flex flex-col justify-center">
+                    <span class="font-serif text-lg text-[#A67C52] mb-6">02</span>
+                    <h4 class="font-serif text-xl sm:text-2xl mb-3">Web Design</h4>
+                    <p class="text-sm text-[#7B5E4A] font-light leading-relaxed">Editorial layouts and interfaces tailored to your voice, composed with intention and restraint.</p>
+                </div>
+                <div class="service-card absolute inset-0 rounded-2xl border border-[#D1B89A] bg-[#FAF7F0] p-8 flex flex-col justify-center">
+                    <span class="font-serif text-lg text-[#A67C52] mb-6">03</span>
+                    <h4 class="font-serif text-xl sm:text-2xl mb-3">Development</h4>
+                    <p class="text-sm text-[#7B5E4A] font-light leading-relaxed">Hand-written, performant front-ends and headless commerce that feel as good as they look.</p>
+                </div>
+                <div class="service-card absolute inset-0 rounded-2xl border border-[#D1B89A] bg-[#FAF7F0] p-8 flex flex-col justify-center">
+                    <span class="font-serif text-lg text-[#A67C52] mb-6">04</span>
+                    <h4 class="font-serif text-xl sm:text-2xl mb-3">Online Menu &amp; Ordering</h4>
+                    <p class="text-sm text-[#7B5E4A] font-light leading-relaxed">A digital menu your guests can browse and order from directly — synced to your kitchen, no app required.</p>
+                </div>
+                <div class="service-card absolute inset-0 rounded-2xl border border-[#D1B89A] bg-[#FAF7F0] p-8 flex flex-col justify-center">
+                    <span class="font-serif text-lg text-[#A67C52] mb-6">05</span>
+                    <h4 class="font-serif text-xl sm:text-2xl mb-3">Booking &amp; Reservations</h4>
+                    <p class="text-sm text-[#7B5E4A] font-light leading-relaxed">A full reservation system for tables, appointments or services — built into your site, not bolted on.</p>
+                </div>
+                <div class="service-card absolute inset-0 rounded-2xl border border-[#D1B89A] bg-[#FAF7F0] p-8 flex flex-col justify-center">
+                    <span class="font-serif text-lg text-[#A67C52] mb-6">06</span>
+                    <h4 class="font-serif text-xl sm:text-2xl mb-3">E-Commerce</h4>
+                    <p class="text-sm text-[#7B5E4A] font-light leading-relaxed">Considered online stores for product-led brands, from checkout flow to the packaging-slip details.</p>
+                </div>
+                <div class="service-card absolute inset-0 rounded-2xl border border-[#D1B89A] bg-[#FAF7F0] p-8 flex flex-col justify-center">
+                    <span class="font-serif text-lg text-[#A67C52] mb-6">07</span>
+                    <h4 class="font-serif text-xl sm:text-2xl mb-3">SEO &amp; Local Visibility</h4>
+                    <p class="text-sm text-[#7B5E4A] font-light leading-relaxed">Making sure the right people find you first — on Google, on Maps, on the searches that matter.</p>
+                </div>
+                <div class="service-card absolute inset-0 rounded-2xl border border-[#D1B89A] bg-[#FAF7F0] p-8 flex flex-col justify-center">
+                    <span class="font-serif text-lg text-[#A67C52] mb-6">08</span>
+                    <h4 class="font-serif text-xl sm:text-2xl mb-3">Care &amp; Maintenance</h4>
+                    <p class="text-sm text-[#7B5E4A] font-light leading-relaxed">We stay on after launch — content updates, performance checks and small refinements as your brand grows.</p>
+                </div>
             </div>
-            <div class="snap-start shrink-0 w-[80%] sm:w-[320px] rounded-2xl border border-[#D1B89A] bg-[#FAF7F0] p-8 flex flex-col">
-                <span class="font-serif text-lg text-[#A67C52] mb-6">02</span>
-                <h4 class="font-serif text-xl sm:text-2xl mb-3">Web Design</h4>
-                <p class="text-sm text-[#7B5E4A] font-light leading-relaxed">Editorial layouts and interfaces tailored to your voice, composed with intention and restraint.</p>
-            </div>
-            <div class="snap-start shrink-0 w-[80%] sm:w-[320px] rounded-2xl border border-[#D1B89A] bg-[#FAF7F0] p-8 flex flex-col">
-                <span class="font-serif text-lg text-[#A67C52] mb-6">03</span>
-                <h4 class="font-serif text-xl sm:text-2xl mb-3">Development</h4>
-                <p class="text-sm text-[#7B5E4A] font-light leading-relaxed">Hand-written, performant front-ends and headless commerce that feel as good as they look.</p>
-            </div>
-            <div class="snap-start shrink-0 w-[80%] sm:w-[320px] rounded-2xl border border-[#D1B89A] bg-[#FAF7F0] p-8 flex flex-col">
-                <span class="font-serif text-lg text-[#A67C52] mb-6">04</span>
-                <h4 class="font-serif text-xl sm:text-2xl mb-3">Online Menu &amp; Ordering</h4>
-                <p class="text-sm text-[#7B5E4A] font-light leading-relaxed">A digital menu your guests can browse and order from directly — synced to your kitchen, no app required.</p>
-            </div>
-            <div class="snap-start shrink-0 w-[80%] sm:w-[320px] rounded-2xl border border-[#D1B89A] bg-[#FAF7F0] p-8 flex flex-col">
-                <span class="font-serif text-lg text-[#A67C52] mb-6">05</span>
-                <h4 class="font-serif text-xl sm:text-2xl mb-3">Booking &amp; Reservations</h4>
-                <p class="text-sm text-[#7B5E4A] font-light leading-relaxed">A full reservation system for tables, appointments or services — built into your site, not bolted on.</p>
-            </div>
-            <div class="snap-start shrink-0 w-[80%] sm:w-[320px] rounded-2xl border border-[#D1B89A] bg-[#FAF7F0] p-8 flex flex-col">
-                <span class="font-serif text-lg text-[#A67C52] mb-6">06</span>
-                <h4 class="font-serif text-xl sm:text-2xl mb-3">E-Commerce</h4>
-                <p class="text-sm text-[#7B5E4A] font-light leading-relaxed">Considered online stores for product-led brands, from checkout flow to the packaging-slip details.</p>
-            </div>
-            <div class="snap-start shrink-0 w-[80%] sm:w-[320px] rounded-2xl border border-[#D1B89A] bg-[#FAF7F0] p-8 flex flex-col">
-                <span class="font-serif text-lg text-[#A67C52] mb-6">07</span>
-                <h4 class="font-serif text-xl sm:text-2xl mb-3">SEO &amp; Local Visibility</h4>
-                <p class="text-sm text-[#7B5E4A] font-light leading-relaxed">Making sure the right people find you first — on Google, on Maps, on the searches that matter.</p>
-            </div>
-            <div class="snap-start shrink-0 w-[80%] sm:w-[320px] rounded-2xl border border-[#D1B89A] bg-[#FAF7F0] p-8 flex flex-col">
-                <span class="font-serif text-lg text-[#A67C52] mb-6">08</span>
-                <h4 class="font-serif text-xl sm:text-2xl mb-3">Care &amp; Maintenance</h4>
-                <p class="text-sm text-[#7B5E4A] font-light leading-relaxed">We stay on after launch — content updates, performance checks and small refinements as your brand grows.</p>
-            </div>
+
+            <button type="button" id="servicesNext" aria-label="Next service" class="shrink-0 w-11 h-11 rounded-full bg-[#3B2A20] text-[#F2E7D5] flex items-center justify-center hover:bg-[#A67C52] transition">→</button>
         </div>
+
+        <div id="servicesDots" class="flex justify-center gap-2 mt-8"></div>
     </section>
 
     <!-- Footer / Contact Section -->
@@ -376,18 +384,45 @@
             progress.style.transform = 'scaleX(' + Math.min(scrolled, 1) + ')';
         });
 
-        // Services carousel arrows
-        var servicesTrack = document.getElementById('servicesTrack');
-        var servicesPrev = document.getElementById('servicesPrev');
-        var servicesNext = document.getElementById('servicesNext');
-        if (servicesTrack && servicesPrev && servicesNext) {
-            var scrollByCard = function (dir) {
-                var card = servicesTrack.querySelector(':scope > div');
-                var amount = card ? card.getBoundingClientRect().width + 20 : 320;
-                servicesTrack.scrollBy({ left: dir * amount, behavior: 'smooth' });
-            };
-            servicesPrev.addEventListener('click', function () { scrollByCard(-1); });
-            servicesNext.addEventListener('click', function () { scrollByCard(1); });
+        // Services "fan" stack carousel
+        var servicesStage = document.getElementById('servicesStage');
+        if (servicesStage) {
+            var serviceCards = Array.prototype.slice.call(servicesStage.querySelectorAll('.service-card'));
+            var dotsWrap = document.getElementById('servicesDots');
+            serviceCards.forEach(function (_, i) {
+                var dot = document.createElement('button');
+                dot.type = 'button';
+                dot.setAttribute('aria-label', 'Go to service ' + (i + 1));
+                dotsWrap.appendChild(dot);
+            });
+            var dots = Array.prototype.slice.call(dotsWrap.children);
+            var activeService = 0;
+
+            function renderServices() {
+                serviceCards.forEach(function (card, i) {
+                    var offset = i - activeService;
+                    var abs = Math.abs(offset);
+                    var scale = Math.max(1 - abs * 0.12, 0.78);
+                    var opacity = abs === 0 ? 1 : (abs === 1 ? 0.6 : (abs === 2 ? 0.3 : 0));
+                    card.style.transform = 'translateX(' + (offset * 42) + '%) scale(' + scale + ')';
+                    card.style.opacity = opacity;
+                    card.style.zIndex = 10 - abs;
+                    card.style.pointerEvents = offset === 0 ? 'auto' : 'none';
+                });
+                dots.forEach(function (d, i) { d.classList.toggle('active-dot', i === activeService); });
+            }
+            document.getElementById('servicesPrev').addEventListener('click', function () {
+                activeService = (activeService - 1 + serviceCards.length) % serviceCards.length;
+                renderServices();
+            });
+            document.getElementById('servicesNext').addEventListener('click', function () {
+                activeService = (activeService + 1) % serviceCards.length;
+                renderServices();
+            });
+            dots.forEach(function (d, i) {
+                d.addEventListener('click', function () { activeService = i; renderServices(); });
+            });
+            renderServices();
         }
 
         // Count-up animation for the stats card
