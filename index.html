@@ -163,18 +163,23 @@
     </section>
 
     <!-- Stats Section -->
-    <div data-aos="fade-up" class="border-b border-[#D1B89A] py-10 sm:py-12 px-4 sm:px-8 max-w-7xl mx-auto grid grid-cols-3 gap-3 sm:gap-8 text-center">
-        <div>
-            <span class="font-serif text-2xl sm:text-3xl md:text-4xl block mb-1">18</span>
-            <span class="text-[10px] sm:text-xs uppercase tracking-widest text-[#7B5E4A]">Projects Delivered</span>
-        </div>
-        <div>
-            <span class="font-serif text-2xl sm:text-3xl md:text-4xl block mb-1">100%</span>
-            <span class="text-[10px] sm:text-xs uppercase tracking-widest text-[#7B5E4A]">Client Retention</span>
-        </div>
-        <div>
-            <span class="font-serif text-2xl sm:text-3xl md:text-4xl block mb-1">2yrs</span>
-            <span class="text-[10px] sm:text-xs uppercase tracking-widest text-[#7B5E4A]">In Practice</span>
+    <div data-aos="fade-up" class="px-4 sm:px-8 max-w-7xl mx-auto py-10 sm:py-12">
+        <div id="statsCard" class="bg-[#3B2A20] text-[#F2E7D5] rounded-3xl py-10 sm:py-14 px-6 sm:px-12 grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-6 sm:divide-x sm:divide-[#5A4536] text-center">
+            <div class="sm:px-6">
+                <span class="counter font-serif text-3xl sm:text-4xl md:text-5xl block mb-2" data-target="34" data-suffix="">0</span>
+                <span class="text-xs uppercase tracking-widest block mb-2">Projects Delivered</span>
+                <span class="text-xs text-[#D1B89A] font-light leading-relaxed block">Websites shipped for restaurants, ateliers and independent brands.</span>
+            </div>
+            <div class="sm:px-6">
+                <span class="counter font-serif text-3xl sm:text-4xl md:text-5xl block mb-2" data-target="100" data-suffix="%">0%</span>
+                <span class="text-xs uppercase tracking-widest block mb-2">Client Retention</span>
+                <span class="text-xs text-[#D1B89A] font-light leading-relaxed block">Every client who has launched with us has stayed.</span>
+            </div>
+            <div class="sm:px-6">
+                <span class="counter font-serif text-3xl sm:text-4xl md:text-5xl block mb-2" data-target="2" data-suffix="yrs">0yrs</span>
+                <span class="text-xs uppercase tracking-widest block mb-2">In Practice</span>
+                <span class="text-xs text-[#D1B89A] font-light leading-relaxed block">Considered, lasting web work since 2024.</span>
+            </div>
         </div>
     </div>
 
@@ -334,6 +339,45 @@
             var scrolled = h.scrollTop / (h.scrollHeight - h.clientHeight || 1);
             progress.style.transform = 'scaleX(' + Math.min(scrolled, 1) + ')';
         });
+
+        // Count-up animation for the stats card
+        var countersStarted = false;
+        function animateCounters(){
+            if (countersStarted) return;
+            countersStarted = true;
+            var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            document.querySelectorAll('.counter').forEach(function (el) {
+                var target = parseFloat(el.getAttribute('data-target'));
+                var suffix = el.getAttribute('data-suffix') || '';
+                if (reduceMotion) {
+                    el.textContent = target + suffix;
+                    return;
+                }
+                var duration = 1400;
+                var start = null;
+                function step(ts) {
+                    if (!start) start = ts;
+                    var progress = Math.min((ts - start) / duration, 1);
+                    var eased = 1 - Math.pow(1 - progress, 3);
+                    var value = Math.round(target * eased);
+                    el.textContent = value + suffix;
+                    if (progress < 1) requestAnimationFrame(step);
+                }
+                requestAnimationFrame(step);
+            });
+        }
+        var statsCard = document.getElementById('statsCard');
+        if (statsCard) {
+            var statsObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        statsObserver.disconnect();
+                    }
+                });
+            }, { threshold: 0.4 });
+            statsObserver.observe(statsCard);
+        }
 
         // Active nav link on scroll (scrollspy)
         var navLinks = document.querySelectorAll('[data-nav]');
