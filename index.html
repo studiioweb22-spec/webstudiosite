@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>W Studio — Digital Design & Development</title>
     <meta name="description" content="W Studio designs and builds considered websites for restaurants, ateliers and independent brands — deliberate typography, quiet motion, and code built to last.">
-    <meta name="theme-color" content="#FBF9F6">
+    <meta name="theme-color" content="#F2E7D5">
 
     <!-- Open Graph / Social sharing -->
     <meta property="og:title" content="W Studio — Digital Design & Development">
@@ -28,10 +28,10 @@
             theme: {
                 extend: {
                     colors: {
-                        studioBg: '#FBF9F6',
-                        studioDark: '#1A1A1A',
-                        studioGray: '#737373',
-                        studioBorder: '#E5E2DC'
+                        studioBg: '#F2E7D5',
+                        studioDark: '#3B2A20',
+                        studioGray: '#7B5E4A',
+                        studioBorder: '#D1B89A'
                     },
                     fontFamily: {
                         serif: ['Playfair Display', 'serif'],
@@ -81,185 +81,185 @@
         }
     </style>
 </head>
-<body class="bg-[#FBF9F6] text-[#1A1A1A] font-sans antialiased selection:bg-[#1A1A1A] selection:text-[#FBF9F6]">
+<body class="bg-[#F2E7D5] text-[#3B2A20] font-sans antialiased selection:bg-[#3B2A20] selection:text-[#F2E7D5]">
 
     <!-- Scroll progress indicator -->
     <div class="fixed top-0 left-0 w-full h-[2px] bg-transparent z-[60]">
-        <div id="scrollProgress" class="h-full bg-[#1A1A1A] w-full"></div>
+        <div id="scrollProgress" class="h-full bg-[#3B2A20] w-full"></div>
     </div>
 
     <!-- Navigation Header -->
-    <header class="border-b border-[#E5E2DC] sticky top-0 bg-[#FBF9F6]/90 backdrop-blur-md z-50">
+    <header class="border-b border-[#D1B89A] sticky top-0 bg-[#F2E7D5]/90 backdrop-blur-md z-50">
         <div class="flex items-center justify-between px-4 sm:px-8 py-4">
             <a href="#top" class="flex items-center space-x-3 min-w-0">
                <img src="logo.png"
          alt="W Studio Logo"
          class="h-10 sm:h-12 lg:h-14 w-auto object-contain">
-<span class="hidden sm:inline border-l border-[#E5E2DC] pl-3 font-serif italic text-lg text-[#1A1A1A]">
+<span class="hidden sm:inline border-l border-[#D1B89A] pl-3 font-serif italic text-lg text-[#3B2A20]">
     W Studio
 </span>            </a>
 
-            <nav class="hidden md:flex items-center space-x-8 text-sm tracking-wide text-[#737373]">
-                <a href="#about" data-nav class="hover:text-[#1A1A1A] transition">ABOUT</a>
-                <a href="#services" data-nav class="hover:text-[#1A1A1A] transition">SERVICES</a>
-                <a href="#work" data-nav class="hover:text-[#1A1A1A] transition">WORK</a>
-                <a href="#contact" data-nav class="hover:text-[#1A1A1A] transition">CONTACT</a>
+            <nav class="hidden md:flex items-center space-x-8 text-sm tracking-wide text-[#7B5E4A]">
+                <a href="#about" data-nav class="hover:text-[#3B2A20] transition">ABOUT</a>
+                <a href="#services" data-nav class="hover:text-[#3B2A20] transition">SERVICES</a>
+                <a href="#work" data-nav class="hover:text-[#3B2A20] transition">WORK</a>
+                <a href="#contact" data-nav class="hover:text-[#3B2A20] transition">CONTACT</a>
             </nav>
 
             <div class="flex items-center gap-3 sm:gap-4">
-<a href="#contact" class="hidden sm:inline-block border border-[#1A1A1A] px-5 py-2.5 rounded-full text-xs uppercase tracking-widest font-medium hover:bg-[#1A1A1A] hover:text-[#FBF9F6] transition">
+<a href="#contact" class="hidden sm:inline-block border border-[#3B2A20] px-5 py-2.5 rounded-full text-xs uppercase tracking-widest font-medium hover:bg-[#3B2A20] hover:text-[#F2E7D5] transition">
     Start a Project
 </a>
                 <!-- Hamburger button (mobile only) -->
                 <button id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu" class="md:hidden flex flex-col justify-center items-center w-9 h-9 shrink-0">
-                    <span class="block w-6 h-px bg-[#1A1A1A] mb-1.5"></span>
-                    <span class="block w-6 h-px bg-[#1A1A1A] mb-1.5"></span>
-                    <span class="block w-6 h-px bg-[#1A1A1A]"></span>
+                    <span class="block w-6 h-px bg-[#3B2A20] mb-1.5"></span>
+                    <span class="block w-6 h-px bg-[#3B2A20] mb-1.5"></span>
+                    <span class="block w-6 h-px bg-[#3B2A20]"></span>
                 </button>
             </div>
         </div>
 
         <!-- Mobile menu panel -->
-        <nav id="mobileMenu" class="md:hidden px-4 sm:px-8 flex flex-col text-sm tracking-wide text-[#737373] border-t border-[#E5E2DC]">
-            <a href="#about" data-nav class="py-3 border-b border-[#E5E2DC] hover:text-[#1A1A1A]">ABOUT</a>
-            <a href="#services" data-nav class="py-3 border-b border-[#E5E2DC] hover:text-[#1A1A1A]">SERVICES</a>
-            <a href="#work" data-nav class="py-3 border-b border-[#E5E2DC] hover:text-[#1A1A1A]">WORK</a>
-            <a href="#contact" data-nav class="py-3 border-b border-[#E5E2DC] hover:text-[#1A1A1A]">CONTACT</a>
-            <a href="#contact" class="my-4 text-center border border-[#1A1A1A] px-5 py-2.5 text-xs uppercase tracking-widest font-medium hover:bg-[#1A1A1A] hover:text-[#FBF9F6] transition">Start a Project</a>
+        <nav id="mobileMenu" class="md:hidden px-4 sm:px-8 flex flex-col text-sm tracking-wide text-[#7B5E4A] border-t border-[#D1B89A]">
+            <a href="#about" data-nav class="py-3 border-b border-[#D1B89A] hover:text-[#3B2A20]">ABOUT</a>
+            <a href="#services" data-nav class="py-3 border-b border-[#D1B89A] hover:text-[#3B2A20]">SERVICES</a>
+            <a href="#work" data-nav class="py-3 border-b border-[#D1B89A] hover:text-[#3B2A20]">WORK</a>
+            <a href="#contact" data-nav class="py-3 border-b border-[#D1B89A] hover:text-[#3B2A20]">CONTACT</a>
+            <a href="#contact" class="my-4 text-center border border-[#3B2A20] px-5 py-2.5 text-xs uppercase tracking-widest font-medium hover:bg-[#3B2A20] hover:text-[#F2E7D5] transition">Start a Project</a>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="top" data-aos="fade-up" class="relative px-4 sm:px-8 pt-16 sm:pt-24 pb-14 sm:pb-20 text-center max-w-5xl mx-auto border-b border-[#E5E2DC] overflow-hidden">
-        <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_rgba(26,26,26,0.05),_transparent_60%)]"></div>
-        <p class="text-xs uppercase tracking-widest text-[#737373] mb-6">Est. 2024 — Based in California, working worldwide</p>
+    <section id="top" data-aos="fade-up" class="relative px-4 sm:px-8 pt-16 sm:pt-24 pb-14 sm:pb-20 text-center max-w-5xl mx-auto border-b border-[#D1B89A] overflow-hidden">
+        <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,_rgba(59,42,32,0.06),_transparent_60%)]"></div>
+        <p class="text-xs uppercase tracking-widest text-[#7B5E4A] mb-6">Est. 2024 — Based in California, working worldwide</p>
         <h1 class="font-serif text-3xl sm:text-4xl md:text-7xl font-normal leading-tight tracking-tight mb-6 sm:mb-8">
             Digital craft for brands <br class="hidden sm:block"><em class="italic">that speak softly.</em>
         </h1>
-        <p class="text-[#737373] max-w-xl mx-auto text-base md:text-lg mb-10 sm:mb-12 font-light leading-relaxed">
+        <p class="text-[#7B5E4A] max-w-xl mx-auto text-base md:text-lg mb-10 sm:mb-12 font-light leading-relaxed">
             We design and build considered websites for restaurants, studios, ateliers and independent houses — where typography is deliberate, motion is quiet, and nothing is decorative by accident.
         </p>
         <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-<a href="#contact" class="inline-flex w-fit bg-[#1A1A1A] text-[#FBF9F6] px-6 sm:px-8 py-3.5 rounded-full text-xs uppercase tracking-widest hover:bg-opacity-90 transition">
+<a href="#contact" class="inline-flex w-fit bg-[#3B2A20] text-[#F2E7D5] px-6 sm:px-8 py-3.5 rounded-full text-xs uppercase tracking-widest hover:bg-opacity-90 transition">
     Begin a Project
 </a>
-<a href="#work" class="inline-flex w-fit border border-[#E5E2DC] px-6 sm:px-8 py-3.5 rounded-full text-xs uppercase tracking-widest hover:border-[#1A1A1A] transition">
+<a href="#work" class="inline-flex w-fit border border-[#D1B89A] px-6 sm:px-8 py-3.5 rounded-full text-xs uppercase tracking-widest hover:border-[#3B2A20] transition">
     See Our Work
 </a>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" data-aos="fade-up" class="border-b border-[#E5E2DC] py-14 sm:py-16 px-4 sm:px-8 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center md:text-left items-center">
+    <section id="about" data-aos="fade-up" class="border-b border-[#D1B89A] py-14 sm:py-16 px-4 sm:px-8 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 text-center md:text-left items-center">
         <div>
-            <p class="text-xs uppercase tracking-widest text-[#737373] mb-2">About the Studio</p>
+            <p class="text-xs uppercase tracking-widest text-[#7B5E4A] mb-2">About the Studio</p>
             <h2 class="font-serif text-2xl md:text-3xl font-light leading-snug">
                 A small studio of designers and engineers building <em class="italic">quiet, precise, enduring</em> digital work.
             </h2>
         </div>
-        <div class="md:col-span-2 text-sm text-[#737373] font-light leading-relaxed">
+        <div class="md:col-span-2 text-sm text-[#7B5E4A] font-light leading-relaxed">
             W Studio partners with a small number of clients each year — restaurants, ateliers and independent brands who care as much about craft as we do. We favour depth over volume: long collaborations, deliberate typography, and code written to be maintained, not just shipped.
         </div>
     </section>
 
     <!-- Stats Section -->
-    <div data-aos="fade-up" class="border-b border-[#E5E2DC] py-10 sm:py-12 px-4 sm:px-8 max-w-7xl mx-auto grid grid-cols-3 gap-3 sm:gap-8 text-center">
+    <div data-aos="fade-up" class="border-b border-[#D1B89A] py-10 sm:py-12 px-4 sm:px-8 max-w-7xl mx-auto grid grid-cols-3 gap-3 sm:gap-8 text-center">
         <div>
             <span class="font-serif text-2xl sm:text-3xl md:text-4xl block mb-1">18</span>
-            <span class="text-[10px] sm:text-xs uppercase tracking-widest text-[#737373]">Projects Delivered</span>
+            <span class="text-[10px] sm:text-xs uppercase tracking-widest text-[#7B5E4A]">Projects Delivered</span>
         </div>
         <div>
             <span class="font-serif text-2xl sm:text-3xl md:text-4xl block mb-1">100%</span>
-            <span class="text-[10px] sm:text-xs uppercase tracking-widest text-[#737373]">Client Retention</span>
+            <span class="text-[10px] sm:text-xs uppercase tracking-widest text-[#7B5E4A]">Client Retention</span>
         </div>
         <div>
             <span class="font-serif text-2xl sm:text-3xl md:text-4xl block mb-1">2yrs</span>
-            <span class="text-[10px] sm:text-xs uppercase tracking-widest text-[#737373]">In Practice</span>
+            <span class="text-[10px] sm:text-xs uppercase tracking-widest text-[#7B5E4A]">In Practice</span>
         </div>
     </div>
 
     <!-- Selected Work Section -->
-    <section id="work" data-aos="fade-up" class="py-16 sm:py-20 px-4 sm:px-8 max-w-7xl mx-auto border-b border-[#E5E2DC]">
+    <section id="work" data-aos="fade-up" class="py-16 sm:py-20 px-4 sm:px-8 max-w-7xl mx-auto border-b border-[#D1B89A]">
         <div class="flex justify-between items-end mb-10 sm:mb-12">
-            <h3 class="text-xs uppercase tracking-widest text-[#737373]">Selected Work</h3>
-            <span class="text-xs uppercase tracking-widest text-[#737373]">2024 — 2026</span>
+            <h3 class="text-xs uppercase tracking-widest text-[#7B5E4A]">Selected Work</h3>
+            <span class="text-xs uppercase tracking-widest text-[#7B5E4A]">2024 — 2026</span>
         </div>
 
         <div id="workGrid" class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
             <!-- Project 1 -->
             <div class="group">
-                <a href="https://casaselvaazul.com/" target="_blank" rel="noopener noreferrer" class="block bg-[#E5E2DC] h-[260px] sm:h-[320px] mb-4 overflow-hidden relative rounded-2xl">
+                <a href="https://casaselvaazul.com/" target="_blank" rel="noopener noreferrer" class="block bg-[#D1B89A] h-[260px] sm:h-[320px] mb-4 overflow-hidden relative rounded-2xl">
                     <video src="work-casa-selva-azul.mp4" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transition duration-700 ease-out group-hover:scale-105 group-hover:brightness-90"></video>
                 </a>
                 <div class="flex justify-between items-center gap-2">
                     <h4 class="font-serif text-lg sm:text-xl">Casa Selva Azul</h4>
-                    <a href="https://casaselvaazul.com/" target="_blank" rel="noopener noreferrer" class="text-xs uppercase tracking-widest text-[#737373] hover:text-[#1A1A1A] text-right shrink-0">Visit Site →</a>
+                    <a href="https://casaselvaazul.com/" target="_blank" rel="noopener noreferrer" class="text-xs uppercase tracking-widest text-[#7B5E4A] hover:text-[#3B2A20] text-right shrink-0">Visit Site →</a>
                 </div>
             </div>
 
             <!-- Project 2 -->
             <div class="group">
-                <a href="https://graceandbeliefco.com/#home" target="_blank" rel="noopener noreferrer" class="block bg-[#E5E2DC] h-[260px] sm:h-[320px] mb-4 overflow-hidden relative rounded-2xl">
+                <a href="https://graceandbeliefco.com/#home" target="_blank" rel="noopener noreferrer" class="block bg-[#D1B89A] h-[260px] sm:h-[320px] mb-4 overflow-hidden relative rounded-2xl">
                     <video src="work-grace-and-belief.mp4" autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover transition duration-700 ease-out group-hover:scale-105 group-hover:brightness-90"></video>
                 </a>
                 <div class="flex justify-between items-center gap-2">
                     <h4 class="font-serif text-lg sm:text-xl">Grace & Belief Co</h4>
-                    <a href="https://graceandbeliefco.com/#home" target="_blank" rel="noopener noreferrer" class="text-xs uppercase tracking-widest text-[#737373] hover:text-[#1A1A1A] text-right shrink-0">Visit Site →</a>
+                    <a href="https://graceandbeliefco.com/#home" target="_blank" rel="noopener noreferrer" class="text-xs uppercase tracking-widest text-[#7B5E4A] hover:text-[#3B2A20] text-right shrink-0">Visit Site →</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" data-aos="fade-up" class="py-16 sm:py-20 px-4 sm:px-8 max-w-7xl mx-auto border-b border-[#E5E2DC]">
-        <h3 class="text-xs uppercase tracking-widest text-[#737373] mb-10 sm:mb-12">Services</h3>
+    <section id="services" data-aos="fade-up" class="py-16 sm:py-20 px-4 sm:px-8 max-w-7xl mx-auto border-b border-[#D1B89A]">
+        <h3 class="text-xs uppercase tracking-widest text-[#7B5E4A] mb-10 sm:mb-12">Services</h3>
         <h2 class="font-serif text-2xl sm:text-3xl md:text-5xl font-light mb-12 sm:mb-16">What we do, and how <em class="italic">we do it.</em></h2>
 
         <div class="space-y-8">
-            <div class="border-t border-[#E5E2DC] pt-8 grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-start md:items-center">
-                <span class="font-serif text-lg text-[#737373]">01</span>
+            <div class="border-t border-[#D1B89A] pt-8 grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-start md:items-center">
+                <span class="font-serif text-lg text-[#7B5E4A]">01</span>
                 <h4 class="font-serif text-xl sm:text-2xl">Brand Identity</h4>
-                <p class="text-sm text-[#737373] font-light">Marks, systems and typography built to endure — considered from the first sketch to the final specimen.</p>
+                <p class="text-sm text-[#7B5E4A] font-light">Marks, systems and typography built to endure — considered from the first sketch to the final specimen.</p>
             </div>
-            <div class="border-t border-[#E5E2DC] pt-8 grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-start md:items-center">
-                <span class="font-serif text-lg text-[#737373]">02</span>
+            <div class="border-t border-[#D1B89A] pt-8 grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-start md:items-center">
+                <span class="font-serif text-lg text-[#7B5E4A]">02</span>
                 <h4 class="font-serif text-xl sm:text-2xl">Web Design</h4>
-                <p class="text-sm text-[#737373] font-light">Editorial layouts and interfaces tailored to your voice, composed with intention and restraint.</p>
+                <p class="text-sm text-[#7B5E4A] font-light">Editorial layouts and interfaces tailored to your voice, composed with intention and restraint.</p>
             </div>
-            <div class="border-t border-[#E5E2DC] pt-8 grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-start md:items-center">
-                <span class="font-serif text-lg text-[#737373]">03</span>
+            <div class="border-t border-[#D1B89A] pt-8 grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-start md:items-center">
+                <span class="font-serif text-lg text-[#7B5E4A]">03</span>
                 <h4 class="font-serif text-xl sm:text-2xl">Development</h4>
-                <p class="text-sm text-[#737373] font-light">Hand-written, performant front-ends and headless commerce that feel as good as they look.</p>
+                <p class="text-sm text-[#7B5E4A] font-light">Hand-written, performant front-ends and headless commerce that feel as good as they look.</p>
             </div>
-            <div class="border-t border-[#E5E2DC] pt-8 grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-start md:items-center">
-                <span class="font-serif text-lg text-[#737373]">04</span>
+            <div class="border-t border-[#D1B89A] pt-8 grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 items-start md:items-center">
+                <span class="font-serif text-lg text-[#7B5E4A]">04</span>
                 <h4 class="font-serif text-xl sm:text-2xl">Care & Maintenance</h4>
-                <p class="text-sm text-[#737373] font-light">We stay on after launch — content updates, performance checks and small refinements as your brand grows.</p>
+                <p class="text-sm text-[#7B5E4A] font-light">We stay on after launch — content updates, performance checks and small refinements as your brand grows.</p>
             </div>
         </div>
     </section>
 
     <!-- Footer / Contact Section -->
     <footer id="contact" data-aos="fade-up" class="py-16 sm:py-20 px-4 sm:px-8 max-w-7xl mx-auto">
-        <h3 class="text-xs uppercase tracking-widest text-[#737373] mb-10 sm:mb-12">Contact</h3>
+        <h3 class="text-xs uppercase tracking-widest text-[#7B5E4A] mb-10 sm:mb-12">Contact</h3>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 mb-16 md:mb-20">
             <div>
                 <h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-light mb-6">Let's begin <em class="italic">something lasting.</em></h2>
-                <p class="text-sm text-[#737373] font-light mb-10 sm:mb-12">We take on a limited number of engagements each quarter. Share a few words about your project and we'll be in touch within two working days.</p>
+                <p class="text-sm text-[#7B5E4A] font-light mb-10 sm:mb-12">We take on a limited number of engagements each quarter. Share a few words about your project and we'll be in touch within two working days.</p>
 
                 <div class="mb-8">
-                    <p class="text-xs uppercase tracking-widest text-[#737373] mb-2">Studio</p>
+                    <p class="text-xs uppercase tracking-widest text-[#7B5E4A] mb-2">Studio</p>
                     <p class="text-sm font-light">1420 Ocean Avenue, Suite 07<br>Santa Monica, California 90401</p>
                 </div>
 
                 <div class="mb-8">
-                    <p class="text-xs uppercase tracking-widest text-[#737373] mb-2">Email</p>
+                    <p class="text-xs uppercase tracking-widest text-[#7B5E4A] mb-2">Email</p>
                     <p class="text-sm font-light break-words">studiio.web22@gmail.com</p>
                 </div>
 
                 <div>
-                    <p class="text-xs uppercase tracking-widest text-[#737373] mb-2">Elsewhere</p>
+                    <p class="text-xs uppercase tracking-widest text-[#7B5E4A] mb-2">Elsewhere</p>
                     <div class="flex flex-wrap gap-x-4 gap-y-2 text-xs tracking-widest uppercase">
                         <a href="https://www.instagram.com/webstudiio22" target="_blank" rel="noopener noreferrer" class="hover:underline">Instagram</a>
                     </div>
@@ -269,32 +269,32 @@
             <form id="contactForm" class="space-y-6">
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div>
-                        <label class="block text-xs uppercase tracking-widest text-[#737373] mb-2">Name *</label>
-                        <input id="fieldName" type="text" class="w-full bg-transparent border-b border-[#E5E2DC] py-2 focus:outline-none focus:border-[#1A1A1A] text-sm" required>
+                        <label class="block text-xs uppercase tracking-widest text-[#7B5E4A] mb-2">Name *</label>
+                        <input id="fieldName" type="text" class="w-full bg-transparent border-b border-[#D1B89A] py-2 focus:outline-none focus:border-[#3B2A20] text-sm" required>
                     </div>
                     <div>
-                        <label class="block text-xs uppercase tracking-widest text-[#737373] mb-2">Email *</label>
-                        <input id="fieldEmail" type="email" class="w-full bg-transparent border-b border-[#E5E2DC] py-2 focus:outline-none focus:border-[#1A1A1A] text-sm" placeholder="john@example.com" required>
+                        <label class="block text-xs uppercase tracking-widest text-[#7B5E4A] mb-2">Email *</label>
+                        <input id="fieldEmail" type="email" class="w-full bg-transparent border-b border-[#D1B89A] py-2 focus:outline-none focus:border-[#3B2A20] text-sm" placeholder="john@example.com" required>
                     </div>
                 </div>
                 <div>
-                    <label class="block text-xs uppercase tracking-widest text-[#737373] mb-2">Company</label>
-                    <input id="fieldCompany" type="text" class="w-full bg-transparent border-b border-[#E5E2DC] py-2 focus:outline-none focus:border-[#1A1A1A] text-sm">
+                    <label class="block text-xs uppercase tracking-widest text-[#7B5E4A] mb-2">Company</label>
+                    <input id="fieldCompany" type="text" class="w-full bg-transparent border-b border-[#D1B89A] py-2 focus:outline-none focus:border-[#3B2A20] text-sm">
                 </div>
                 <div>
-                    <label class="block text-xs uppercase tracking-widest text-[#737373] mb-2">Project *</label>
-                    <textarea id="fieldProject" rows="3" class="w-full bg-transparent border-b border-[#E5E2DC] py-2 focus:outline-none focus:border-[#1A1A1A] text-sm" placeholder="Tell us a little about what you're building..." required></textarea>
+                    <label class="block text-xs uppercase tracking-widest text-[#7B5E4A] mb-2">Project *</label>
+                    <textarea id="fieldProject" rows="3" class="w-full bg-transparent border-b border-[#D1B89A] py-2 focus:outline-none focus:border-[#3B2A20] text-sm" placeholder="Tell us a little about what you're building..." required></textarea>
                 </div>
                 <div class="pt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-<button type="submit" class="inline-flex items-center justify-center border border-[#1A1A1A] px-6 sm:px-9 py-3 rounded-full text-[11px] uppercase tracking-[0.2em] transition hover:bg-[#1A1A1A] hover:text-[#FBF9F6]">
+<button type="submit" class="inline-flex items-center justify-center border border-[#3B2A20] px-6 sm:px-9 py-3 rounded-full text-[11px] uppercase tracking-[0.2em] transition hover:bg-[#3B2A20] hover:text-[#F2E7D5]">
     Send Inquiry
 </button>
-                    <span id="formStatus" class="text-xs text-[#737373]">Or write to us directly.</span>
+                    <span id="formStatus" class="text-xs text-[#7B5E4A]">Or write to us directly.</span>
                 </div>
             </form>
         </div>
 
-        <div class="border-t border-[#E5E2DC] pt-8 flex flex-col sm:flex-row justify-between gap-2 text-xs text-[#737373]">
+        <div class="border-t border-[#D1B89A] pt-8 flex flex-col sm:flex-row justify-between gap-2 text-xs text-[#7B5E4A]">
             <span>© <span id="year"></span> W Studio — All Rights Reserved</span>
             <span>Made with intention · California</span>
         </div>
@@ -345,8 +345,8 @@
                 if (!entry.isIntersecting) return;
                 navLinks.forEach(function (link) {
                     var isActive = link.getAttribute('href') === '#' + entry.target.id;
-                    link.classList.toggle('text-[#1A1A1A]', isActive);
-                    link.classList.toggle('text-[#737373]', !isActive);
+                    link.classList.toggle('text-[#3B2A20]', isActive);
+                    link.classList.toggle('text-[#7B5E4A]', !isActive);
                 });
             });
         }, { rootMargin: '-45% 0px -45% 0px' });
