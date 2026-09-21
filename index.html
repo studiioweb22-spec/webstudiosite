@@ -399,8 +399,13 @@
         AOS.init({
             duration: 900,
             once: true,
-            easing: 'ease-out'
+            easing: 'ease-out',
+            offset: 80
         });
+        // Recalculate trigger positions once images/video have actually loaded
+        // (fixes animations never firing on mobile when late-loading media shifts layout)
+        window.addEventListener('load', function () { AOS.refresh(); });
+        window.addEventListener('resize', function () { AOS.refreshHard(); });
 
         // Subtle parallax on the hero background
         var heroImg = document.getElementById('heroImg');
